@@ -1,0 +1,321 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import {
+  ArrowRight,
+  MapPin,
+  ShieldCheck,
+  Pickaxe,
+  Building2,
+} from 'lucide-react'
+
+export default function Home() {
+  return (
+    <main className="bg-[#0A0A0A] text-white overflow-hidden">
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center scale-105"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1800&auto=format&fit=crop')",
+          }}
+        />
+
+        <div className="absolute inset-0 bg-black/75" />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-[#0A0A0A]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl"
+          >
+            <div className="uppercase tracking-[8px] text-[#D4A017] text-sm font-semibold mb-6">
+              Andes Mining Advisory
+            </div>
+
+            <h1 className="text-6xl md:text-8xl font-black leading-none mb-8">
+              Strategic
+              <span className="block text-[#D4A017]">
+                Mining Advisory
+              </span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed max-w-3xl mb-10">
+              Boutique mining advisory firm specialized in mining
+              concessions, strategic intelligence, due diligence and
+              cross-border expansion throughout Chile and Argentina.
+            </p>
+
+            <div className="flex flex-wrap gap-5">
+              <button className="bg-[#D4A017] hover:bg-[#f1bc2d] transition-all text-black font-bold px-8 py-4 rounded-2xl flex items-center gap-3">
+                Explore AMA
+                <ArrowRight size={20} />
+              </button>
+
+              <button className="border border-zinc-700 hover:border-[#D4A017] transition-all px-8 py-4 rounded-2xl font-semibold">
+                Contact Us
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="py-32 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+              About AMA
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
+              Mining Intelligence
+              <span className="block text-[#D4A017]">
+                Meets Strategy
+              </span>
+            </h2>
+
+            <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+              AMA is a strategic mining advisory boutique focused on
+              mining assets, concessions, territorial intelligence,
+              investment opportunities and cross-border mining
+              development.
+            </p>
+
+            <p className="text-zinc-500 text-lg leading-relaxed">
+              We combine legal strategy, mining networking, due
+              diligence and business vision to maximize the value and
+              protection of strategic mining assets.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1400&auto=format&fit=crop"
+              alt="Mining"
+              className="rounded-[40px] shadow-2xl border border-zinc-800"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="py-32 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-20">
+            <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+              Core Services
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black mb-6">
+              Strategic Areas
+            </h2>
+
+            <p className="text-zinc-400 text-xl max-w-3xl mx-auto">
+              Premium advisory solutions for mining companies,
+              investors and strategic asset owners.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Pickaxe size={40} />,
+                title: 'Mining Concessions',
+                desc: 'Strategic mining protection and concession advisory.',
+              },
+              {
+                icon: <ShieldCheck size={40} />,
+                title: 'Due Diligence',
+                desc: 'Legal, territorial and strategic mining evaluation.',
+              },
+              {
+                icon: <Building2 size={40} />,
+                title: 'Mining Brokerage',
+                desc: 'Asset intermediation and investor networking.',
+              },
+              {
+                icon: <MapPin size={40} />,
+                title: 'Cross-Border Expansion',
+                desc: 'Chile–Argentina mining growth strategy.',
+              },
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -10 }}
+                className="bg-[#181818] border border-zinc-800 hover:border-[#D4A017] transition-all rounded-[32px] p-8"
+              >
+                <div className="text-[#D4A017] mb-6">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4">
+                  {service.title}
+                </h3>
+
+                <p className="text-zinc-400 leading-relaxed">
+                  {service.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* REGIONS */}
+      <section className="py-32 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop"
+              alt="South America"
+              className="rounded-[40px] border border-zinc-800 shadow-2xl"
+            />
+          </div>
+
+          <div>
+            <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+              Strategic Regions
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black leading-tight mb-10">
+              Chile &
+              <span className="block text-[#D4A017]">
+                Argentina
+              </span>
+            </h2>
+
+            <div className="space-y-5">
+              {[
+                'San Juan — Copper Expansion',
+                'Salta & Catamarca — Lithium Triangle',
+                'Antofagasta — Mining Capital',
+                'Santiago — Financial Hub',
+                'Concepción — Logistics & Strategy',
+              ].map((region, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#161616] border border-zinc-800 rounded-2xl p-5 flex items-center gap-4"
+                >
+                  <div className="w-4 h-4 rounded-full bg-[#D4A017]" />
+
+                  <span className="text-zinc-200 text-lg">
+                    {region}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM */}
+      <section className="py-32 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-20">
+            <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+              Leadership
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black">
+              Founding Team
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10">
+            {/* OCTAVIO */}
+            <div className="bg-[#181818] border border-zinc-800 rounded-[32px] overflow-hidden">
+              <img
+                src="/images/octavio.png"
+                alt="Octavio Moya"
+                className="w-full h-[520px] object-cover"
+              />
+
+              <div className="p-8">
+                <h3 className="text-3xl font-black mb-2">
+                  Octavio Moya
+                </h3>
+
+                <div className="text-[#D4A017] font-semibold mb-6">
+                  Founder & Strategic Mining Advisor
+                </div>
+
+                <p className="text-zinc-400 leading-relaxed">
+                  Specialist in mining concessions, strategic
+                  territorial protection, mining intelligence and
+                  cross-border advisory.
+                </p>
+              </div>
+            </div>
+
+            {/* MARIA PAZ */}
+            <div className="bg-[#181818] border border-zinc-800 rounded-[32px] overflow-hidden">
+              <img
+                src="/images/mariapaz.png"
+                alt="Maria Paz Rivas"
+                className="w-full h-[520px] object-cover"
+              />
+
+              <div className="p-8">
+                <h3 className="text-3xl font-black mb-2">
+                  María Paz Rivas
+                </h3>
+
+                <div className="text-[#D4A017] font-semibold mb-6">
+                  Chief Communications Officer
+                </div>
+
+                <p className="text-zinc-400 leading-relaxed">
+                  Specialist in corporate communications,
+                  institutional positioning and strategic
+                  relationships.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#D4A017]/10 to-transparent" />
+
+        <div className="relative max-w-5xl mx-auto px-6 lg:px-10 text-center">
+          <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+            Contact
+          </div>
+
+          <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+            Building Strategic
+            <span className="block text-[#D4A017]">
+              Mining Opportunities
+            </span>
+          </h2>
+
+          <p className="text-zinc-300 text-xl leading-relaxed mb-12">
+            AMA operates with strict confidentiality standards and a
+            strategic long-term mining vision.
+          </p>
+
+          <div className="space-y-4 text-xl">
+            <div>contacto@amamining.com</div>
+            <div>+56 9 6863 1097</div>
+            <div>Chile • Argentina</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
