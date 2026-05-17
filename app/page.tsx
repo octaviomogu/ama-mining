@@ -21,14 +21,14 @@ const content = {
     heroTitle1: 'Strategic',
     heroTitle2: 'Mining Advisory',
     heroText:
-      'Boutique mining advisory firm specialized in mining concessions, strategic intelligence, due diligence, mining brokerage and cross-border expansion throughout Chile and Argentina.',
+      'Strategic mining advisory firm specialized in mining concessions, mining intelligence, due diligence and cross-border mining development throughout Chile and Argentina.',
     cta1: 'Explore AMA',
     cta2: 'Contact Us',
     aboutLabel: 'About AMA',
     aboutTitle1: 'Mining Intelligence',
     aboutTitle2: 'Meets Strategy',
     aboutText1:
-      'AMA is a strategic mining advisory boutique focused on mining assets, concessions, territorial intelligence, investment opportunities and cross-border mining development.',
+      'AMA is a strategic mining advisory firm focused on mining assets, concessions, territorial intelligence, investment opportunities and cross-border mining development.',
     aboutText2:
       'We combine legal strategy, mining networking, due diligence and business vision to maximize the value and protection of strategic mining assets.',
     servicesLabel: 'Core Services',
@@ -56,17 +56,17 @@ const content = {
   es: {
     nav: ['Nosotros', 'Servicios', 'Regiones', 'Equipo', 'Contacto'],
     heroLabel: 'Andes Mining Advisory',
-    heroTitle1: 'Asesoría',
-    heroTitle2: 'Minera Estratégica',
+    heroTitle1: 'Advisory',
+    heroTitle2: 'Minero Estratégico',
     heroText:
-      'Firma boutique de advisory minero especializada en concesiones mineras, inteligencia estratégica, due diligence, brokerage minero y expansión binacional entre Chile y Argentina.',
+      'Firma de advisory minero estratégico especializada en concesiones mineras, inteligencia minera, due diligence y desarrollo minero binacional entre Chile y Argentina.',
     cta1: 'Conocer AMA',
     cta2: 'Contactar',
     aboutLabel: 'Sobre AMA',
     aboutTitle1: 'Inteligencia Minera',
     aboutTitle2: 'con Estrategia',
     aboutText1:
-      'AMA es una firma boutique de asesoría minera estratégica enfocada en activos mineros, concesiones, inteligencia territorial, oportunidades de inversión y desarrollo binacional.',
+      'AMA es una firma de advisory minero estratégico enfocada en activos mineros, concesiones, inteligencia territorial, oportunidades de inversión y desarrollo binacional.',
     aboutText2:
       'Integramos estrategia legal, networking minero, due diligence y visión de negocios para maximizar el valor y la protección de activos mineros estratégicos.',
     servicesLabel: 'Servicios',
