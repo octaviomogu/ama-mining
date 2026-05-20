@@ -15,44 +15,6 @@ import {
 } from 'lucide-react'
 
 const content = {
-  en: {
-    nav: ['About', 'Services', 'Regions', 'Team', 'Contact'],
-    heroLabel: 'Andes Mining Advisory',
-    heroTitle1: 'Strategic',
-    heroTitle2: 'Mining Advisory',
-    heroText:
-      'Strategic mining advisory firm specialized in mining concessions, mining intelligence, due diligence and cross-border mining development throughout Chile and Argentina.',
-    cta1: 'Explore AMA',
-    cta2: 'Contact Us',
-    aboutLabel: 'About AMA',
-    aboutTitle1: 'Mining Intelligence',
-    aboutTitle2: 'Meets Strategy',
-    aboutText1:
-      'AMA is a strategic mining advisory firm focused on mining assets, concessions, territorial intelligence, investment opportunities and cross-border mining development.',
-    aboutText2:
-      'We combine legal strategy, mining networking, due diligence and business vision to maximize the value and protection of strategic mining assets.',
-    servicesLabel: 'Core Services',
-    servicesTitle: 'Strategic Areas',
-    servicesText:
-      'Premium advisory solutions for mining companies, investors and strategic asset owners.',
-    regionsLabel: 'Strategic Regions',
-    regionsTitle1: 'Chile &',
-    regionsTitle2: 'Argentina',
-    teamLabel: 'Leadership',
-    teamTitle: 'Founding Team',
-    contactLabel: 'Contact',
-    contactTitle1: 'Building Strategic',
-    contactTitle2: 'Mining Opportunities',
-    contactText:
-      'AMA operates with strict confidentiality standards and a strategic long-term mining vision.',
-    octavioRole: 'Founder & Strategic Mining Advisor',
-    octavioText:
-      'Specialist in mining concessions, strategic territorial protection, mining intelligence and cross-border advisory.',
-    mariaRole: 'Chief Communications Officer',
-    mariaText:
-      'Specialist in corporate communications, institutional positioning and strategic relationships.',
-  },
-
   es: {
     nav: ['Nosotros', 'Servicios', 'Regiones', 'Equipo', 'Contacto'],
     heroLabel: 'Andes Mining Advisory',
@@ -90,31 +52,62 @@ const content = {
     mariaText:
       'Especialista en comunicaciones corporativas, posicionamiento institucional y relaciones estratégicas.',
   },
+
+  en: {
+    nav: ['About', 'Services', 'Regions', 'Team', 'Contact'],
+    heroLabel: 'Andes Mining Advisory',
+    heroTitle1: 'Strategic',
+    heroTitle2: 'Mining Advisory',
+    heroText:
+      'Strategic mining advisory firm specialized in mining concessions, mining intelligence, due diligence and cross-border mining development throughout Chile and Argentina.',
+    cta1: 'Explore AMA',
+    cta2: 'Contact Us',
+    aboutLabel: 'About AMA',
+    aboutTitle1: 'Mining Intelligence',
+    aboutTitle2: 'Meets Strategy',
+    aboutText1:
+      'AMA is a strategic mining advisory firm focused on mining assets, concessions, territorial intelligence, investment opportunities and cross-border mining development.',
+    aboutText2:
+      'We combine legal strategy, mining networking, due diligence and business vision to maximize the value and protection of strategic mining assets.',
+    servicesLabel: 'Core Services',
+    servicesTitle: 'Strategic Areas',
+    servicesText:
+      'Premium advisory solutions for mining companies, investors and strategic asset owners.',
+    regionsLabel: 'Strategic Regions',
+    regionsTitle1: 'Chile &',
+    regionsTitle2: 'Argentina',
+    teamLabel: 'Leadership',
+    teamTitle: 'Founding Team',
+    contactLabel: 'Contact',
+    contactTitle1: 'Building Strategic',
+    contactTitle2: 'Mining Opportunities',
+    contactText:
+      'AMA operates with strict confidentiality standards and a strategic long-term mining vision.',
+    octavioRole: 'Founder & Strategic Mining Advisor',
+    octavioText:
+      'Specialist in mining concessions, strategic territorial protection, mining intelligence and cross-border advisory.',
+    mariaRole: 'Chief Communications Officer',
+    mariaText:
+      'Specialist in corporate communications, institutional positioning and strategic relationships.',
+  },
 }
 
 const services = {
-  en: [
-    ['Mining Concessions', 'Strategic mining protection and concession advisory.'],
-    ['Due Diligence', 'Legal, territorial and strategic mining evaluation.'],
-    ['Mining Brokerage', 'Asset intermediation and investor networking.'],
-    ['Cross-Border Expansion', 'Chile–Argentina mining growth strategy.'],
-  ],
   es: [
     ['Concesiones Mineras', 'Protección estratégica y asesoría concesional minera.'],
     ['Due Diligence', 'Evaluación legal, territorial y estratégica minera.'],
     ['Brokerage Minero', 'Intermediación de activos y networking inversionista.'],
     ['Expansión Binacional', 'Estrategia minera de crecimiento Chile–Argentina.'],
   ],
+  en: [
+    ['Mining Concessions', 'Strategic mining protection and concession advisory.'],
+    ['Due Diligence', 'Legal, territorial and strategic mining evaluation.'],
+    ['Mining Brokerage', 'Asset intermediation and investor networking.'],
+    ['Cross-Border Expansion', 'Chile–Argentina mining growth strategy.'],
+  ],
 }
 
 const regions = {
-  en: [
-    'San Juan — Copper Expansion',
-    'Salta & Catamarca — Lithium Triangle',
-    'Antofagasta — Mining Capital',
-    'Santiago — Financial Hub',
-    'Concepción — Logistics & Strategy',
-  ],
   es: [
     'San Juan — Expansión del Cobre',
     'Salta & Catamarca — Triángulo del Litio',
@@ -122,10 +115,17 @@ const regions = {
     'Santiago — Centro Financiero',
     'Concepción — Logística & Estrategia',
   ],
+  en: [
+    'San Juan — Copper Expansion',
+    'Salta & Catamarca — Lithium Triangle',
+    'Antofagasta — Mining Capital',
+    'Santiago — Financial Hub',
+    'Concepción — Logistics & Strategy',
+  ],
 }
 
 export default function Home() {
-  const [lang, setLang] = useState<'en' | 'es'>('en')
+  const [lang, setLang] = useState<'es' | 'en'>('es')
   const t = content[lang]
 
   return (
@@ -153,11 +153,11 @@ export default function Home() {
           </nav>
 
           <button
-            onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
             className="border border-zinc-700 hover:border-[#D4A017] rounded-full px-4 py-2 text-sm flex items-center gap-2 transition-all"
           >
             <Globe2 size={16} />
-            {lang === 'en' ? 'ES' : 'EN'}
+            {lang === 'es' ? 'EN' : 'ES'}
           </button>
         </div>
       </header>
