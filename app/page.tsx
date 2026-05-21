@@ -51,6 +51,14 @@ const content = {
     mariaRole: 'Chief Communications Officer',
     mariaText:
       'Especialista en comunicaciones corporativas, posicionamiento institucional y relaciones estratégicas.',
+    formName: 'Nombre',
+    formCompany: 'Empresa',
+    formEmail: 'Email',
+    formPhone: 'Teléfono',
+    formType: 'Tipo de consulta',
+    formMessage: 'Mensaje',
+    formButton: 'Enviar Consulta Estratégica',
+    focusTitle: 'Foco Estratégico',
   },
 
   en: {
@@ -89,6 +97,14 @@ const content = {
     mariaRole: 'Chief Communications Officer',
     mariaText:
       'Specialist in corporate communications, institutional positioning and strategic relationships.',
+    formName: 'Name',
+    formCompany: 'Company',
+    formEmail: 'Email',
+    formPhone: 'Phone',
+    formType: 'Inquiry Type',
+    formMessage: 'Message',
+    formButton: 'Send Strategic Inquiry',
+    focusTitle: 'Strategic Focus',
   },
 }
 
@@ -170,7 +186,6 @@ export default function Home() {
               "url('https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2000&auto=format&fit=crop')",
           }}
         />
-
         <div className="absolute inset-0 bg-black/80" />
         <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[#D4A017]/20 blur-[160px] rounded-full" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[160px] rounded-full" />
@@ -357,30 +372,127 @@ export default function Home() {
       <section id="contact" className="py-32 bg-[#050505] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#D4A017]/10 to-transparent" />
 
-        <div className="relative max-w-5xl mx-auto px-6 lg:px-10 text-center">
-          <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
-            {t.contactLabel}
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
+              {t.contactLabel}
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+              {t.contactTitle1}
+              <span className="block text-[#D4A017]">{t.contactTitle2}</span>
+            </h2>
+
+            <p className="text-zinc-300 text-xl leading-relaxed max-w-3xl mx-auto">
+              {t.contactText}
+            </p>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-            {t.contactTitle1}
-            <span className="block text-[#D4A017]">{t.contactTitle2}</span>
-          </h2>
+          <div className="grid lg:grid-cols-2 gap-14 items-start">
+            <div className="space-y-8">
+              <div className="bg-[#111111] border border-zinc-800 rounded-[30px] p-8">
+                <div className="flex items-center gap-4 mb-5">
+                  <Mail className="text-[#D4A017]" size={28} />
+                  <div>
+                    <div className="text-zinc-400 text-sm">Email</div>
+                    <div className="text-xl font-semibold">contacto@amamining.com</div>
+                  </div>
+                </div>
 
-          <p className="text-zinc-300 text-xl leading-relaxed mb-12">{t.contactText}</p>
+                <div className="flex items-center gap-4">
+                  <Phone className="text-[#D4A017]" size={28} />
+                  <div>
+                    <div className="text-zinc-400 text-sm">{t.formPhone}</div>
+                    <div className="text-xl font-semibold">+56 9 6863 1097</div>
+                  </div>
+                </div>
+              </div>
 
-          <div className="flex flex-col items-center gap-5 text-xl">
-            <div className="flex items-center gap-3">
-              <Mail className="text-[#D4A017]" />
-              contacto@amamining.com
+              <div className="bg-[#111111] border border-zinc-800 rounded-[30px] p-8">
+                <h3 className="text-2xl font-bold mb-4 text-[#D4A017]">
+                  {t.focusTitle}
+                </h3>
+
+                <ul className="space-y-3 text-zinc-300">
+                  <li>• Mining Concessions</li>
+                  <li>• Mining Intelligence</li>
+                  <li>• Copper & Lithium Projects</li>
+                  <li>• Cross-Border Advisory</li>
+                  <li>• Due Diligence</li>
+                  <li>• Strategic Mining Assets</li>
+                </ul>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Phone className="text-[#D4A017]" />
-              +56 9 6863 1097
-            </div>
+            <div className="bg-[#111111] border border-zinc-800 rounded-[36px] p-10 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
+              <form className="space-y-6">
+                <div>
+                  <label className="text-sm text-zinc-400 mb-2 block">{t.formName}</label>
+                  <input
+                    type="text"
+                    placeholder={lang === 'es' ? 'Nombre completo' : 'Full name'}
+                    className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all"
+                  />
+                </div>
 
-            <div>Chile • Argentina</div>
+                <div>
+                  <label className="text-sm text-zinc-400 mb-2 block">{t.formCompany}</label>
+                  <input
+                    type="text"
+                    placeholder={lang === 'es' ? 'Empresa / Compañía' : 'Company'}
+                    className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="text-sm text-zinc-400 mb-2 block">{t.formEmail}</label>
+                    <input
+                      type="email"
+                      placeholder="correo@empresa.com"
+                      className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm text-zinc-400 mb-2 block">{t.formPhone}</label>
+                    <input
+                      type="text"
+                      placeholder="+56..."
+                      className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-sm text-zinc-400 mb-2 block">{t.formType}</label>
+                  <select className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all">
+                    <option>Mining Advisory</option>
+                    <option>Mining Concessions</option>
+                    <option>Due Diligence</option>
+                    <option>Copper Projects</option>
+                    <option>Lithium Projects</option>
+                    <option>Strategic Alliances</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-sm text-zinc-400 mb-2 block">{t.formMessage}</label>
+                  <textarea
+                    rows={5}
+                    placeholder={lang === 'es' ? 'Describe su requerimiento...' : 'Describe your request...'}
+                    className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-[#D4A017] hover:bg-[#f0bc2f] transition-all text-black font-bold py-5 rounded-2xl shadow-[0_0_40px_rgba(212,160,23,0.35)]"
+                >
+                  {t.formButton}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
