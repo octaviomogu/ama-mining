@@ -1,0 +1,42 @@
+export const metals = [
+  {
+    name: 'Copper',
+    symbol: 'Cu',
+    price: 'US$ 4.55 / lb',
+    change: '+1.2%',
+    trend: 'Bullish',
+    relevance: 'Chile • Peru • Argentina',
+  },
+  {
+    name: 'Gold',
+    symbol: 'Au',
+    price: 'US$ 2,360 / oz',
+    change: '+0.6%',
+    trend: 'Defensive',
+    relevance: 'Chile • Argentina • Peru',
+  },
+  {
+    name: 'Silver',
+    symbol: 'Ag',
+    price: 'US$ 30.10 / oz',
+    change: '+0.4%',
+    trend: 'Stable',
+    relevance: 'Peru • Chile',
+  },
+  {
+    name: 'Lithium',
+    symbol: 'Li',
+    price: 'Reference Market',
+    change: 'Volatile',
+    trend: 'Strategic',
+    relevance: 'Argentina • Chile',
+  },
+  {
+    name: 'Molybdenum',
+    symbol: 'Mo',
+    price: 'Strategic By-product',
+    change: 'Watch',
+    trend: 'Industrial',
+    relevance: 'Chile • Peru',
+  },
+]
