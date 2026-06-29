@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -13,29 +13,30 @@ import {
   Mail,
   MessageCircle,
 } from 'lucide-react'
+import IntelligencePreview from './components/IntelligencePreview'
 
 const content = {
   es: {
-    nav: ['Nosotros', 'Servicios', 'Regiones', 'Equipo', 'Contacto'],
+    nav: ['Nosotros', 'Servicios', 'Regiones', 'Equipo', 'Inteligencia', 'Contacto'],
     heroLabel: 'Andes Mining Advisory',
     heroTitle1: 'Advisory',
-    heroTitle2: 'Minero Estratégico',
+    heroTitle2: 'Minero EstratÃ©gico',
     heroText:
-      'Firma de advisory minero estratégico especializada en concesiones mineras, inteligencia minera, due diligence y desarrollo minero binacional entre Chile y Argentina.',
+      'Firma de advisory minero estratÃ©gico especializada en concesiones mineras, inteligencia minera, due diligence y desarrollo minero binacional entre Chile y Argentina.',
     cta1: 'Conocer AMA',
     cta2: 'Contactar',
     aboutLabel: 'Sobre AMA',
     aboutTitle1: 'Inteligencia Minera',
     aboutTitle2: 'con Estrategia',
     aboutText1:
-      'AMA es una firma de advisory minero estratégico enfocada en activos mineros, concesiones, inteligencia territorial, oportunidades de inversión y desarrollo binacional.',
+      'AMA es una firma de advisory minero estratÃ©gico enfocada en activos mineros, concesiones, inteligencia territorial, oportunidades de inversiÃ³n y desarrollo binacional.',
     aboutText2:
-      'Integramos estrategia legal, networking minero, due diligence y visión de negocios para maximizar el valor y la protección de activos mineros estratégicos.',
+      'Integramos estrategia legal, networking minero, due diligence y visiÃ³n de negocios para maximizar el valor y la protecciÃ³n de activos mineros estratÃ©gicos.',
     servicesLabel: 'Servicios',
-    servicesTitle: 'Áreas Estratégicas',
+    servicesTitle: 'Ãreas EstratÃ©gicas',
     servicesText:
-      'Soluciones premium para compañías mineras, inversionistas y propietarios de activos estratégicos.',
-    regionsLabel: 'Regiones Estratégicas',
+      'Soluciones premium para compaÃ±Ã­as mineras, inversionistas y propietarios de activos estratÃ©gicos.',
+    regionsLabel: 'Regiones EstratÃ©gicas',
     regionsTitle1: 'Chile &',
     regionsTitle2: 'Argentina',
     teamLabel: 'Liderazgo',
@@ -44,25 +45,25 @@ const content = {
     contactTitle1: 'Construyendo',
     contactTitle2: 'Oportunidades Mineras',
     contactText:
-      'AMA opera bajo estrictos estándares de confidencialidad y una visión minera estratégica de largo plazo.',
+      'AMA opera bajo estrictos estÃ¡ndares de confidencialidad y una visiÃ³n minera estratÃ©gica de largo plazo.',
     octavioRole: 'Founder & Strategic Mining Advisor',
     octavioText:
-      'Especialista en concesiones mineras, protección territorial estratégica, inteligencia minera y advisory binacional.',
+      'Especialista en concesiones mineras, protecciÃ³n territorial estratÃ©gica, inteligencia minera y advisory binacional.',
     mariaRole: 'Chief Communications Officer',
     mariaText:
-      'Especialista en comunicaciones corporativas, posicionamiento institucional y relaciones estratégicas.',
+      'Especialista en comunicaciones corporativas, posicionamiento institucional y relaciones estratÃ©gicas.',
     formName: 'Nombre',
     formCompany: 'Empresa',
     formEmail: 'Email',
-    formPhone: 'Teléfono',
+    formPhone: 'TelÃ©fono',
     formType: 'Tipo de consulta',
     formMessage: 'Mensaje',
-    formButton: 'Enviar Consulta Estratégica',
-    focusTitle: 'Foco Estratégico',
+    formButton: 'Enviar Consulta EstratÃ©gica',
+    focusTitle: 'Foco EstratÃ©gico',
   },
 
   en: {
-    nav: ['About', 'Services', 'Regions', 'Team', 'Contact'],
+    nav: ['About', 'Services', 'Regions', 'Team', 'Intelligence', 'Contact'],
     heroLabel: 'Andes Mining Advisory',
     heroTitle1: 'Strategic',
     heroTitle2: 'Mining Advisory',
@@ -110,33 +111,33 @@ const content = {
 
 const services = {
   es: [
-    ['Concesiones Mineras', 'Protección estratégica y asesoría concesional minera.'],
-    ['Due Diligence', 'Evaluación legal, territorial y estratégica minera.'],
-    ['Brokerage Minero', 'Intermediación de activos y networking inversionista.'],
-    ['Expansión Binacional', 'Estrategia minera de crecimiento Chile–Argentina.'],
+    ['Concesiones Mineras', 'ProtecciÃ³n estratÃ©gica y asesorÃ­a concesional minera.'],
+    ['Due Diligence', 'EvaluaciÃ³n legal, territorial y estratÃ©gica minera.'],
+    ['Brokerage Minero', 'IntermediaciÃ³n de activos y networking inversionista.'],
+    ['ExpansiÃ³n Binacional', 'Estrategia minera de crecimiento Chileâ€“Argentina.'],
   ],
   en: [
     ['Mining Concessions', 'Strategic mining protection and concession advisory.'],
     ['Due Diligence', 'Legal, territorial and strategic mining evaluation.'],
     ['Mining Brokerage', 'Asset intermediation and investor networking.'],
-    ['Cross-Border Expansion', 'Chile–Argentina mining growth strategy.'],
+    ['Cross-Border Expansion', 'Chileâ€“Argentina mining growth strategy.'],
   ],
 }
 
 const regions = {
   es: [
-    'San Juan — Expansión del Cobre',
-    'Salta & Catamarca — Triángulo del Litio',
-    'Antofagasta — Capital Minera',
-    'Santiago — Centro Financiero',
-    'Concepción — Logística & Estrategia',
+    'San Juan â€” ExpansiÃ³n del Cobre',
+    'Salta & Catamarca â€” TriÃ¡ngulo del Litio',
+    'Antofagasta â€” Capital Minera',
+    'Santiago â€” Centro Financiero',
+    'ConcepciÃ³n â€” LogÃ­stica & Estrategia',
   ],
   en: [
-    'San Juan — Copper Expansion',
-    'Salta & Catamarca — Lithium Triangle',
-    'Antofagasta — Mining Capital',
-    'Santiago — Financial Hub',
-    'Concepción — Logistics & Strategy',
+    'San Juan â€” Copper Expansion',
+    'Salta & Catamarca â€” Lithium Triangle',
+    'Antofagasta â€” Mining Capital',
+    'Santiago â€” Financial Hub',
+    'ConcepciÃ³n â€” Logistics & Strategy',
   ],
 }
 
@@ -165,7 +166,8 @@ export default function Home() {
             <a href="#services" className="hover:text-[#D4A017] transition-all">{t.nav[1]}</a>
             <a href="#regions" className="hover:text-[#D4A017] transition-all">{t.nav[2]}</a>
             <a href="#team" className="hover:text-[#D4A017] transition-all">{t.nav[3]}</a>
-            <a href="#contact" className="hover:text-[#D4A017] transition-all">{t.nav[4]}</a>
+            <a href="#intelligence" className="hover:text-[#D4A017] transition-all">{t.nav[4]}</a>
+            <a href="#contact" className="hover:text-[#D4A017] transition-all">{t.nav[5]}</a>
           </nav>
 
           <button
@@ -294,6 +296,8 @@ export default function Home() {
         </div>
       </section>
 
+      <IntelligencePreview lang={lang} />
+
       <section id="regions" className="py-32 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -357,10 +361,10 @@ export default function Home() {
               whileHover={{ y: -8 }}
               className="bg-[#151515] border border-zinc-800 hover:border-[#D4A017] transition-all rounded-[32px] overflow-hidden"
             >
-              <img src="/images/mariapaz.png" alt="María Paz Rivas" className="w-full h-[600px] object-cover" />
+              <img src="/images/mariapaz.png" alt="MarÃ­a Paz Rivas" className="w-full h-[600px] object-cover" />
 
               <div className="p-8">
-                <h3 className="text-3xl font-black mb-2">María Paz Rivas</h3>
+                <h3 className="text-3xl font-black mb-2">MarÃ­a Paz Rivas</h3>
                 <div className="text-[#D4A017] font-semibold mb-6">{t.mariaRole}</div>
                 <p className="text-zinc-400 leading-relaxed">{t.mariaText}</p>
               </div>
@@ -395,7 +399,7 @@ export default function Home() {
                   <Mail className="text-[#D4A017]" size={28} />
                   <div>
                     <div className="text-zinc-400 text-sm">Email</div>
-                    <div className="text-xl font-semibold">contacto@amamining.com</div>
+                    <div className="text-xl font-semibold">octaviomoya@gmail.com</div>
                   </div>
                 </div>
 
@@ -414,12 +418,12 @@ export default function Home() {
                 </h3>
 
                 <ul className="space-y-3 text-zinc-300">
-                  <li>• Mining Concessions</li>
-                  <li>• Mining Intelligence</li>
-                  <li>• Copper & Lithium Projects</li>
-                  <li>• Cross-Border Advisory</li>
-                  <li>• Due Diligence</li>
-                  <li>• Strategic Mining Assets</li>
+                  <li>â€¢ Mining Concessions</li>
+                  <li>â€¢ Mining Intelligence</li>
+                  <li>â€¢ Copper & Lithium Projects</li>
+                  <li>â€¢ Cross-Border Advisory</li>
+                  <li>â€¢ Due Diligence</li>
+                  <li>â€¢ Strategic Mining Assets</li>
                 </ul>
               </div>
             </div>
@@ -439,7 +443,7 @@ export default function Home() {
                   <label className="text-sm text-zinc-400 mb-2 block">{t.formCompany}</label>
                   <input
                     type="text"
-                    placeholder={lang === 'es' ? 'Empresa / Compañía' : 'Company'}
+                    placeholder={lang === 'es' ? 'Empresa / CompaÃ±Ã­a' : 'Company'}
                     className="w-full bg-black border border-zinc-700 focus:border-[#D4A017] outline-none rounded-2xl px-5 py-4 text-white transition-all"
                   />
                 </div>
@@ -503,7 +507,7 @@ export default function Home() {
             <div className="text-2xl font-black tracking-[4px] mb-2">
               AMA<span className="text-[#D4A017]">.</span>
             </div>
-            <div className="text-zinc-500 text-sm">Andes Mining Advisory © 2026</div>
+            <div className="text-zinc-500 text-sm">Andes Mining Advisory Â© 2026</div>
           </div>
 
           <div className="flex items-center gap-6 text-zinc-400">
@@ -515,7 +519,7 @@ export default function Home() {
               in
             </a>
 
-            <a href="mailto:contacto@amamining.com" className="hover:text-[#D4A017] transition-all">
+            <a href="mailto:octaviomoya@gmail.com" className="hover:text-[#D4A017] transition-all">
               <Mail size={22} />
             </a>
 
