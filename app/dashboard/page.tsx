@@ -51,7 +51,7 @@ export default function DashboardPage() {
             <h2 className="text-2xl font-bold mb-4">Peru</h2>
             <p className="text-zinc-400 leading-relaxed">
               Copper, silver, gold and strategic mining opportunities in one of
-              the world’s key mining jurisdictions.
+              the worldâ€™s key mining jurisdictions.
             </p>
           </div>
         </div>

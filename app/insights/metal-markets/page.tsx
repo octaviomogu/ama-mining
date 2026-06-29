@@ -82,7 +82,7 @@ export default function MetalMarketsPage() {
 
           <div className="mt-8 flex items-center gap-3 text-[#D4A017]">
             <Globe2 size={20} />
-            Chile • Argentina • Peru
+            Chile â€¢ Argentina â€¢ Peru
           </div>
         </div>
       </section>
