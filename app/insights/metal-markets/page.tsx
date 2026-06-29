@@ -54,7 +54,7 @@ export default function MetalMarketsPage() {
 
                 <div>
                   <div className="text-zinc-500 text-sm">Strategic Relevance</div>
-                  <div className="text-lg">{metal.relevance}</div>
+                  <div className="text-lg">{metal.region}</div>
                 </div>
               </div>
             </div>
