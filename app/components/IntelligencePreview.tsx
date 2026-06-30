@@ -1,6 +1,4 @@
-'use client'
-
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, BarChart3, Globe2, ShieldCheck, TrendingUp } from 'lucide-react'
 
 type Props = {
@@ -8,14 +6,13 @@ type Props = {
 }
 
 export default function IntelligencePreview({ lang }: Props) {
-  const text = {
+  const t = {
     es: {
       label: 'AMA Mining Intelligence Platform',
       title1: 'Inteligencia Minera',
       title2: 'para mejores decisiones',
-      body:
-        'Mercados de metales, señales estratégicas, regulación minera y análisis ejecutivo para Chile, Argentina y Perú.',
-      button: 'Entrar a Intelligence Center',
+      body: 'Mercados de metales, señales estratégicas, regulación minera y análisis ejecutivo para Chile, Argentina y Perú.',
+      button: 'Entrar al Intelligence Center',
       cards: [
         ['Metal Markets', 'Cobre, oro, plata, litio y minerales estratégicos.'],
         ['Regulatory Watch', 'Seguimiento normativo y riesgos concesionales.'],
@@ -26,8 +23,7 @@ export default function IntelligencePreview({ lang }: Props) {
       label: 'AMA Mining Intelligence Platform',
       title1: 'Mining Intelligence',
       title2: 'for better decisions',
-      body:
-        'Metal markets, strategic signals, mining regulation and executive analysis for Chile, Argentina and Peru.',
+      body: 'Metal markets, strategic signals, mining regulation and executive analysis for Chile, Argentina and Peru.',
       button: 'Enter Intelligence Center',
       cards: [
         ['Metal Markets', 'Copper, gold, silver, lithium and strategic minerals.'],
@@ -44,26 +40,26 @@ export default function IntelligencePreview({ lang }: Props) {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D4A017]/10 blur-[150px] rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="uppercase tracking-[5px] text-[#D4A017] text-sm mb-4 font-semibold">
-              {text.label}
+              {t.label}
             </div>
 
             <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
-              {text.title1}
-              <span className="block text-[#D4A017]">{text.title2}</span>
+              {t.title1}
+              <span className="block text-[#D4A017]">{t.title2}</span>
             </h2>
 
             <p className="text-zinc-300 text-xl leading-relaxed mb-10">
-              {text.body}
+              {t.body}
             </p>
 
             <Link
               href="/dashboard"
               className="inline-flex items-center gap-3 bg-[#D4A017] hover:bg-[#f1bc2d] transition-all text-black font-bold px-8 py-4 rounded-2xl shadow-[0_0_40px_rgba(212,160,23,0.35)]"
             >
-              {text.button}
+              {t.button}
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -78,7 +74,7 @@ export default function IntelligencePreview({ lang }: Props) {
             </div>
 
             <div className="space-y-5">
-              {text.cards.map(([title, desc], index) => {
+              {t.cards.map(([title, desc], index) => {
                 const Icon = icons[index]
 
                 return (

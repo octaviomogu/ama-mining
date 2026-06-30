@@ -38,7 +38,7 @@ export default function InsightsPage() {
 
           <div className="bg-[#151515] border border-zinc-800 rounded-[32px] p-8">
             <Globe2 className="text-[#D4A017] mb-6" size={42} />
-            <h2 className="text-2xl font-bold mb-4">Chile â€¢ Argentina â€¢ Peru</h2>
+            <h2 className="text-2xl font-bold mb-4">Chile ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Argentina ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Peru</h2>
             <p className="text-zinc-400 leading-relaxed">
               Cross-border intelligence focused on copper, lithium, rare earths,
               concessions, regulation and project development.

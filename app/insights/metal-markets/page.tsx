@@ -1,4 +1,4 @@
-import { metals } from '@/app/data/metals'
+﻿import { metals } from '@/app/data/metals'
 import { TrendingUp, Activity, Globe2 } from 'lucide-react'
 
 export default function MetalMarketsPage() {
@@ -82,7 +82,7 @@ export default function MetalMarketsPage() {
 
           <div className="mt-8 flex items-center gap-3 text-[#D4A017]">
             <Globe2 size={20} />
-            Chile â€¢ Argentina â€¢ Peru
+            Chile ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Argentina ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Peru
           </div>
         </div>
       </section>
