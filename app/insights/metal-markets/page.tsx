@@ -1,4 +1,4 @@
-﻿import { metals } from '@/app/data/metals'
+import { metals } from '@/app/data/metals'
 import { TrendingUp, Activity, Globe2 } from 'lucide-react'
 
 export default function MetalMarketsPage() {

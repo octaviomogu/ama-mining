@@ -5,7 +5,7 @@ export const metals = [
     price: 'US$ 4.58/lb',
     change: '+1.14%',
     trend: 'Bullish',
-    region: 'Chile ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Peru ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Argentina',
+    region: 'Chile ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Peru ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Argentina',
     impact: 'Strong copper price supports exploration, concessions and M&A activity.',
   },
   {
@@ -14,7 +14,7 @@ export const metals = [
     price: 'US$ 2,365/oz',
     change: '+0.61%',
     trend: 'Defensive',
-    region: 'Chile ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Argentina ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Peru',
+    region: 'Chile ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Argentina ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Peru',
     impact: 'Gold remains attractive during uncertainty and supports advanced exploration.',
   },
   {
@@ -23,7 +23,7 @@ export const metals = [
     price: 'US$ 31.04/oz',
     change: '-0.12%',
     trend: 'Stable',
-    region: 'Peru ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Chile ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Argentina',
+    region: 'Peru ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Chile ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Argentina',
     impact: 'Silver maintains industrial and precious-metal relevance across the Andes.',
   },
   {
@@ -32,7 +32,7 @@ export const metals = [
     price: 'Reference Market',
     change: 'Volatile',
     trend: 'Strategic',
-    region: 'Argentina ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Chile ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Peru',
+    region: 'Argentina ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Chile ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Peru',
     impact: 'Lithium remains strategic despite price volatility, especially in the NOA region.',
   },
 ]
