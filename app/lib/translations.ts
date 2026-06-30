@@ -2,60 +2,96 @@ export type Lang = 'es' | 'en'
 
 export const translations = {
   es: {
-    nav: ['Nosotros', 'Servicios', 'Regiones', 'Equipo', 'Inteligencia', 'Contacto'],
-    heroTitle1: 'Advisory',
-    heroTitle2: 'Minero Estratégico',
-    heroText:
-      'Firma de advisory minero especializada en concesiones, inteligencia minera, due diligence, brokerage y desarrollo de oportunidades en Chile, Argentina y Perú.',
-    ctaServices: 'Conocer servicios',
-    ctaContact: 'Contactar',
+    nav: [
+      'Advisory',
+      'Activos Mineros',
+      'Análisis de Mercado',
+      'Chile | Argentina | Perú',
+      'Equipo',
+      'Contacto',
+    ],
 
-    aboutTitle: 'Inteligencia minera con estrategia',
-    aboutText:
-      'AMA Mining integra visión legal, técnica y comercial para proteger activos mineros, estructurar oportunidades y acompañar procesos de inversión en la industria minera latinoamericana.',
-
-    servicesTitle: 'Servicios estratégicos',
-    servicesSubtitle:
-      'Soluciones para titulares de concesiones, inversionistas, empresas mineras y actores estratégicos del ecosistema minero.',
-
-    intelligenceTitle: 'Mining Intelligence Platform',
-    intelligenceText:
-      'Análisis de mercados de metales, señales mineras, regulación, riesgos concesionales y oportunidades de inversión en Chile, Argentina y Perú.',
-    intelligenceButton: 'Entrar al Intelligence Center',
-
-    regionsTitle: 'Chile, Argentina y Perú',
-    teamTitle: 'Equipo fundador',
-    contactTitle: 'Construyendo oportunidades mineras',
-    contactText:
-      'Trabajamos bajo confidencialidad, visión estratégica y foco en activos mineros de alto potencial.',
-  },
-
-  en: {
-    nav: ['About', 'Services', 'Regions', 'Team', 'Intelligence', 'Contact'],
     heroTitle1: 'Strategic',
     heroTitle2: 'Mining Advisory',
     heroText:
-      'Mining advisory firm specialized in concessions, mining intelligence, due diligence, brokerage and opportunity development across Chile, Argentina and Peru.',
-    ctaServices: 'Explore services',
+      'Protegemos, desarrollamos y maximizamos el valor de activos mineros estratégicos en Chile, Argentina y Perú.',
+    heroSubline:
+      'Concesiones Mineras • Due Diligence • Brokerage Minero • Market Analysis',
+    ctaServices: 'Ver áreas de advisory',
+    ctaContact: 'Contactar',
+
+    aboutEyebrow: 'Qué hacemos',
+    aboutTitle: 'Decisiones estratégicas sobre activos mineros',
+    aboutText:
+      'AMA Mining integra experiencia legal, técnica y comercial para apoyar decisiones críticas sobre concesiones, proyectos, oportunidades de inversión y activos mineros de alto valor.',
+
+    servicesEyebrow: 'Advisory',
+    servicesTitle: 'Áreas de advisory estratégico',
+    servicesSubtitle:
+      'Acompañamos a propietarios de activos, inversionistas, compañías mineras y proveedores estratégicos en decisiones de alto impacto.',
+
+    intelligenceEyebrow: 'Market Analysis',
+    intelligenceTitle: 'Análisis de mercado para decisiones mineras',
+    intelligenceText:
+      'Seguimiento de metales, señales de mercado, regulación, riesgos concesionales y oportunidades de inversión en Chile, Argentina y Perú.',
+    intelligenceButton: 'Ver análisis de mercado',
+
+    regionsEyebrow: 'Regiones',
+    regionsTitle: 'Chile, Argentina y Perú',
+
+    teamEyebrow: 'Equipo',
+    teamTitle: 'Equipo estratégico minero',
+
+    contactEyebrow: 'Contacto',
+    contactTitle: 'Hablemos de su activo minero',
+    contactText:
+      'Trabajamos bajo confidencialidad, visión estratégica y foco en proteger y desarrollar oportunidades mineras de alto potencial.',
+  },
+
+  en: {
+    nav: [
+      'Advisory',
+      'Mining Assets',
+      'Market Analysis',
+      'Chile | Argentina | Peru',
+      'Team',
+      'Contact',
+    ],
+
+    heroTitle1: 'Strategic',
+    heroTitle2: 'Mining Advisory',
+    heroText:
+      'Protecting, developing and maximizing the value of strategic mining assets across Chile, Argentina and Peru.',
+    heroSubline:
+      'Mining Concessions • Due Diligence • Mining Brokerage • Market Analysis',
+    ctaServices: 'Explore advisory areas',
     ctaContact: 'Contact',
 
-    aboutTitle: 'Mining intelligence meets strategy',
+    aboutEyebrow: 'What we do',
+    aboutTitle: 'Strategic decisions for mining assets',
     aboutText:
-      'AMA Mining integrates legal, technical and commercial vision to protect mining assets, structure opportunities and support investment processes across Latin American mining.',
+      'AMA Mining integrates legal, technical and commercial expertise to support critical decisions regarding concessions, projects, investment opportunities and high-value mining assets.',
 
-    servicesTitle: 'Strategic services',
+    servicesEyebrow: 'Advisory',
+    servicesTitle: 'Strategic advisory areas',
     servicesSubtitle:
-      'Solutions for concession holders, investors, mining companies and strategic actors across the mining ecosystem.',
+      'We advise asset owners, investors, mining companies and strategic suppliers on high-impact mining decisions.',
 
-    intelligenceTitle: 'Mining Intelligence Platform',
+    intelligenceEyebrow: 'Market Analysis',
+    intelligenceTitle: 'Market analysis for mining decisions',
     intelligenceText:
-      'Metal markets analysis, mining signals, regulation, concession risks and investment opportunities in Chile, Argentina and Peru.',
-    intelligenceButton: 'Enter Intelligence Center',
+      'Monitoring metals, market signals, regulation, concession risks and investment opportunities across Chile, Argentina and Peru.',
+    intelligenceButton: 'View market analysis',
 
+    regionsEyebrow: 'Regions',
     regionsTitle: 'Chile, Argentina and Peru',
-    teamTitle: 'Founding team',
-    contactTitle: 'Building mining opportunities',
+
+    teamEyebrow: 'Team',
+    teamTitle: 'Strategic mining team',
+
+    contactEyebrow: 'Contact',
+    contactTitle: 'Let’s discuss your mining asset',
     contactText:
-      'We operate with confidentiality, strategic vision and a strong focus on high-potential mining assets.',
+      'We operate with confidentiality, strategic vision and a strong focus on protecting and developing high-potential mining opportunities.',
   },
 }
