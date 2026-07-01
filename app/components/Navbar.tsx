@@ -24,7 +24,7 @@ export default function Navbar({ lang, setLang, t }: Props) {
         <nav className="hidden lg:flex items-center gap-7 text-sm text-zinc-300">
           <a href="/#services" className="hover:text-[#CFAE52] transition-all">{t.nav[0]}</a>
           <a href="/#about" className="hover:text-[#CFAE52] transition-all">{t.nav[1]}</a>
-          <a href="/dashboard" className="hover:text-[#CFAE52] transition-all">{t.nav[2]}</a>
+          <Link href="/dashboard" className="hover:text-[#CFAE52] transition-all">{t.nav[2]}</Link>
           <a href="/#regions" className="hover:text-[#CFAE52] transition-all">{t.nav[3]}</a>
           <a href="/#team" className="hover:text-[#CFAE52] transition-all">{t.nav[4]}</a>
           <a href="/#contact" className="hover:text-[#CFAE52] transition-all">{t.nav[5]}</a>

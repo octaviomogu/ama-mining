@@ -1,43 +1,46 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 import { Activity, AlertTriangle, Globe2, ShieldCheck, TrendingUp } from 'lucide-react'
 
 const data = {
   es: {
-    label: 'AMA Strategic Mining Advisory',
-    title1: 'Panel Ejecutivo',
-    title2: 'de Mercado Minero',
+    label: 'AMA Strategic Market Analysis',
+    title1: 'Market Analysis',
+    title2: 'Center',
+    home: 'Volver a AMA',
     intro:
-      'Señales de mercado, precios de metales y análisis estratégico para decisiones sobre activos mineros en Chile, Argentina y Perú.',
+      'SeÃ±ales de mercado, precios de metales y anÃ¡lisis estratÃ©gico para decisiones sobre activos mineros en Chile, Argentina y PerÃº.',
     metals: [
-      ['Cu', 'Cobre', 'US$ 4.58/lb', '+1.14%', 'Alcista', 'Chile • Perú • Argentina'],
-      ['Au', 'Oro', 'US$ 2,365/oz', '+0.61%', 'Defensivo', 'Chile • Argentina • Perú'],
-      ['Ag', 'Plata', 'US$ 31.04/oz', '-0.12%', 'Estable', 'Perú • Chile • Argentina'],
-      ['Li', 'Litio', 'Referencia de mercado', 'Volátil', 'Estratégico', 'Argentina • Chile • Perú'],
+      ['Cu', 'Cobre', 'US$ 4.58/lb', '+1.14%', 'Alcista', 'Chile â€¢ PerÃº â€¢ Argentina'],
+      ['Au', 'Oro', 'US$ 2,365/oz', '+0.61%', 'Defensivo', 'Chile â€¢ Argentina â€¢ PerÃº'],
+      ['Ag', 'Plata', 'US$ 31.04/oz', '-0.12%', 'Estable', 'PerÃº â€¢ Chile â€¢ Argentina'],
+      ['Li', 'Litio', 'Referencia de mercado', 'VolÃ¡til', 'EstratÃ©gico', 'Argentina â€¢ Chile â€¢ PerÃº'],
     ],
     regions: [
-      ['Chile', 'Cobre, litio, concesiones mineras, regulación y protección de activos estratégicos.'],
-      ['Argentina', 'Expansión cuprífera en San Juan y desarrollo de litio en Salta, Catamarca y Jujuy.'],
-      ['Perú', 'Cobre, oro, plata y oportunidades mineras en una jurisdicción clave para la región.'],
+      ['Chile', 'Cobre, litio, concesiones mineras, regulaciÃ³n y protecciÃ³n de activos estratÃ©gicos.'],
+      ['Argentina', 'ExpansiÃ³n cuprÃ­fera en San Juan y desarrollo de litio en Salta, Catamarca y Jujuy.'],
+      ['PerÃº', 'Cobre, oro, plata y oportunidades mineras en una jurisdicciÃ³n clave para la regiÃ³n.'],
     ],
-    commentTitle: 'Comentario Estratégico AMA',
+    commentTitle: 'Comentario EstratÃ©gico AMA',
     comment1:
-      'El cobre continúa siendo el metal estratégico central para Chile y Perú, mientras Argentina fortalece su posición como plataforma de crecimiento minero a través del cobre en San Juan y el litio en el NOA.',
+      'El cobre continÃºa siendo el metal estratÃ©gico central para Chile y PerÃº, mientras Argentina fortalece su posiciÃ³n como plataforma de crecimiento minero a travÃ©s del cobre en San Juan y el litio en el NOA.',
     comment2:
-      'AMA analiza los precios de metales no solo como referencias financieras, sino como señales de valor concesional, oportunidad de inversión, timing de proyectos y apetito del mercado.',
+      'AMA analiza los precios de metales no solo como referencias financieras, sino como seÃ±ales de valor concesional, oportunidad de inversiÃ³n, timing de proyectos y apetito del mercado.',
   },
   en: {
-    label: 'AMA Strategic Mining Advisory',
-    title1: 'Executive',
-    title2: 'Mining Market Dashboard',
+    label: 'AMA Strategic Market Analysis',
+    title1: 'Market Analysis',
+    title2: 'Center',
+    home: 'Back to AMA',
     intro:
       'Market signals, metal prices and strategic analysis for mining asset decisions across Chile, Argentina and Peru.',
     metals: [
-      ['Cu', 'Copper', 'US$ 4.58/lb', '+1.14%', 'Bullish', 'Chile • Peru • Argentina'],
-      ['Au', 'Gold', 'US$ 2,365/oz', '+0.61%', 'Defensive', 'Chile • Argentina • Peru'],
-      ['Ag', 'Silver', 'US$ 31.04/oz', '-0.12%', 'Stable', 'Peru • Chile • Argentina'],
-      ['Li', 'Lithium', 'Market reference', 'Volatile', 'Strategic', 'Argentina • Chile • Peru'],
+      ['Cu', 'Copper', 'US$ 4.58/lb', '+1.14%', 'Bullish', 'Chile â€¢ Peru â€¢ Argentina'],
+      ['Au', 'Gold', 'US$ 2,365/oz', '+0.61%', 'Defensive', 'Chile â€¢ Argentina â€¢ Peru'],
+      ['Ag', 'Silver', 'US$ 31.04/oz', '-0.12%', 'Stable', 'Peru â€¢ Chile â€¢ Argentina'],
+      ['Li', 'Lithium', 'Market reference', 'Volatile', 'Strategic', 'Argentina â€¢ Chile â€¢ Peru'],
     ],
     regions: [
       ['Chile', 'Copper, lithium, mining concessions, regulation and strategic asset protection.'],
@@ -64,13 +67,22 @@ export default function DashboardPage() {
             {t.label}
           </div>
 
-          <button
-            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-            className="border border-[#27313B] hover:border-[#CFAE52] rounded-full px-4 py-2 text-sm flex items-center gap-2"
-          >
-            <Globe2 size={16} />
-            {lang === 'es' ? 'EN' : 'ES'}
-          </button>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="border border-[#27313B] hover:border-[#CFAE52] rounded-full px-4 py-2 text-sm"
+            >
+              {t.home}
+            </Link>
+
+            <button
+              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+              className="border border-[#27313B] hover:border-[#CFAE52] rounded-full px-4 py-2 text-sm flex items-center gap-2"
+            >
+              <Globe2 size={16} />
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+          </div>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
@@ -104,7 +116,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div>
-                  <div className="text-[#A6B0BB] text-sm">Variación</div>
+                  <div className="text-[#A6B0BB] text-sm">VariaciÃ³n</div>
                   <div className="text-lg text-[#CFAE52]">{change}</div>
                 </div>
 
@@ -114,7 +126,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div>
-                  <div className="text-[#A6B0BB] text-sm">Relevancia estratégica</div>
+                  <div className="text-[#A6B0BB] text-sm">Relevancia estratÃ©gica</div>
                   <div className="text-lg">{region}</div>
                 </div>
               </div>

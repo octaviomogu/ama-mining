@@ -2,44 +2,42 @@ import { Building2, FileSearch, Handshake, ShieldCheck } from 'lucide-react'
 
 const reasons = [
   {
-    title: 'Protección de activos mineros',
-    text: 'Acompañamos la constitución, revisión, defensa y estrategia de concesiones mineras.',
+    title: 'ProtecciÃ³n de activos mineros',
+    text: 'ConstituciÃ³n, revisiÃ³n, defensa y estrategia de concesiones mineras.',
     icon: ShieldCheck,
   },
   {
     title: 'Due diligence integral',
-    text: 'Integramos revisión legal, técnica, territorial y comercial antes de tomar decisiones.',
+    text: 'RevisiÃ³n legal, tÃ©cnica, territorial y comercial antes de tomar decisiones.',
     icon: FileSearch,
   },
   {
-    title: 'Brokerage minero estratégico',
-    text: 'Apoyamos procesos de compra, venta, valorización, NDA y negociación de activos.',
+    title: 'Brokerage minero estratÃ©gico',
+    text: 'Compra, venta, valorizaciÃ³n, NDA, deal flow y negociaciÃ³n de activos.',
     icon: Handshake,
   },
   {
     title: 'Advisory regional',
-    text: 'Conectamos oportunidades y riesgos en Chile, Argentina y Perú con visión ejecutiva.',
+    text: 'Chile, Argentina y PerÃº con visiÃ³n ejecutiva y criterio de inversiÃ³n.',
     icon: Building2,
   },
 ]
 
-export default function WhyAMA() {
+export default function WhyAMA({ t }: { t: any }) {
   return (
     <section className="py-32 bg-[#0B1118]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-4xl mb-20">
           <div className="uppercase tracking-[5px] text-[#CFAE52] text-sm mb-4 font-semibold">
-            Why AMA
+            {t.whyEyebrow}
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
-            Mining assets require strategic decisions.
+            {t.whyTitle}
           </h2>
 
           <p className="text-[#A6B0BB] text-xl leading-relaxed">
-            AMA ayuda a empresas mineras, inversionistas y titulares de concesiones
-            a proteger, evaluar y desarrollar activos mineros con criterio legal,
-            técnico y comercial.
+            {t.whyText}
           </p>
         </div>
 
