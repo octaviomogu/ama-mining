@@ -11,22 +11,25 @@ import Regions from './components/Regions'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import TrustBar from './components/TrustBar'
+import WhyAMA from './components/WhyAMA'
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('es')
   const t = translations[lang]
 
   return (
-    <main className="bg-[#050505] text-white overflow-hidden">
-      <Navbar lang={lang} setLang={setLang} t={t} />
-      <Hero t={t} />
-      <About t={t} />
-      <Services t={t} />
-      <Intelligence t={t} />
-      <Regions t={t} />
-      <Team t={t} />
-      <Contact t={t} />
-      <Footer />
-    </main>
-  )
-}
+  <main className="bg-[#050505] text-white overflow-hidden">
+    <Navbar lang={lang} setLang={setLang} t={t} />
+    <Hero t={t} />
+    <TrustBar />
+    <WhyAMA />
+    <About t={t} />
+    <Services t={t} />
+    <Intelligence t={t} />
+    <Regions t={t} />
+    <Team t={t} />
+    <Contact t={t} />
+    <Footer />
+  </main>
+)
