@@ -1,4 +1,6 @@
-export type Lang = 'es' | 'en'
+const fs = require('fs');
+
+const content = `export type Lang = 'es' | 'en'
 
 export const translations = {
   es: {
@@ -74,3 +76,7 @@ export const translations = {
     contactText: 'We operate with confidentiality, strategic vision and a strong focus on protecting and developing high-potential mining opportunities.',
   },
 }
+`;
+
+fs.writeFileSync('app/lib/translations.ts', content, 'utf8');
+console.log('translations.ts reparado en UTF-8');
