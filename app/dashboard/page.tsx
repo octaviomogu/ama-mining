@@ -1,79 +1,150 @@
-import { metals } from '../data/metals'
-import MetalCard from '../components/MetalCard'
-import { Globe2, ShieldCheck, TrendingUp, AlertTriangle } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Activity, AlertTriangle, Globe2, ShieldCheck, TrendingUp } from 'lucide-react'
+
+const data = {
+  es: {
+    label: 'AMA Strategic Mining Advisory',
+    title1: 'Panel Ejecutivo',
+    title2: 'de Mercado Minero',
+    intro:
+      'Señales de mercado, precios de metales y análisis estratégico para decisiones sobre activos mineros en Chile, Argentina y Perú.',
+    metals: [
+      ['Cu', 'Cobre', 'US$ 4.58/lb', '+1.14%', 'Alcista', 'Chile • Perú • Argentina'],
+      ['Au', 'Oro', 'US$ 2,365/oz', '+0.61%', 'Defensivo', 'Chile • Argentina • Perú'],
+      ['Ag', 'Plata', 'US$ 31.04/oz', '-0.12%', 'Estable', 'Perú • Chile • Argentina'],
+      ['Li', 'Litio', 'Referencia de mercado', 'Volátil', 'Estratégico', 'Argentina • Chile • Perú'],
+    ],
+    regions: [
+      ['Chile', 'Cobre, litio, concesiones mineras, regulación y protección de activos estratégicos.'],
+      ['Argentina', 'Expansión cuprífera en San Juan y desarrollo de litio en Salta, Catamarca y Jujuy.'],
+      ['Perú', 'Cobre, oro, plata y oportunidades mineras en una jurisdicción clave para la región.'],
+    ],
+    commentTitle: 'Comentario Estratégico AMA',
+    comment1:
+      'El cobre continúa siendo el metal estratégico central para Chile y Perú, mientras Argentina fortalece su posición como plataforma de crecimiento minero a través del cobre en San Juan y el litio en el NOA.',
+    comment2:
+      'AMA analiza los precios de metales no solo como referencias financieras, sino como señales de valor concesional, oportunidad de inversión, timing de proyectos y apetito del mercado.',
+  },
+  en: {
+    label: 'AMA Strategic Mining Advisory',
+    title1: 'Executive',
+    title2: 'Mining Market Dashboard',
+    intro:
+      'Market signals, metal prices and strategic analysis for mining asset decisions across Chile, Argentina and Peru.',
+    metals: [
+      ['Cu', 'Copper', 'US$ 4.58/lb', '+1.14%', 'Bullish', 'Chile • Peru • Argentina'],
+      ['Au', 'Gold', 'US$ 2,365/oz', '+0.61%', 'Defensive', 'Chile • Argentina • Peru'],
+      ['Ag', 'Silver', 'US$ 31.04/oz', '-0.12%', 'Stable', 'Peru • Chile • Argentina'],
+      ['Li', 'Lithium', 'Market reference', 'Volatile', 'Strategic', 'Argentina • Chile • Peru'],
+    ],
+    regions: [
+      ['Chile', 'Copper, lithium, mining concessions, regulation and strategic asset protection.'],
+      ['Argentina', 'Copper expansion in San Juan and lithium development in Salta, Catamarca and Jujuy.'],
+      ['Peru', 'Copper, gold, silver and mining opportunities in a key regional jurisdiction.'],
+    ],
+    commentTitle: 'AMA Strategic Comment',
+    comment1:
+      'Copper remains the core strategic metal for Chile and Peru, while Argentina strengthens its position as a mining growth platform through copper in San Juan and lithium in the NOA region.',
+    comment2:
+      'AMA analyzes metal prices not only as financial references, but as signals of concession value, investment opportunity, project timing and market appetite.',
+  },
+}
 
 export default function DashboardPage() {
+  const [lang, setLang] = useState<'es' | 'en'>('es')
+  const t = data[lang]
+
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
+    <main className="min-h-screen bg-[#0B1118] text-white">
       <section className="px-6 lg:px-10 py-28 max-w-7xl mx-auto">
-        <div className="uppercase tracking-[6px] text-[#D4A017] text-sm font-semibold mb-6">
-          AMA Mining Intelligence Platform
+        <div className="flex justify-between items-center mb-12">
+          <div className="uppercase tracking-[6px] text-[#CFAE52] text-sm font-semibold">
+            {t.label}
+          </div>
+
+          <button
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            className="border border-[#27313B] hover:border-[#CFAE52] rounded-full px-4 py-2 text-sm flex items-center gap-2"
+          >
+            <Globe2 size={16} />
+            {lang === 'es' ? 'EN' : 'ES'}
+          </button>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-          Executive Mining
-          <span className="block text-[#D4A017]">Dashboard</span>
+          {t.title1}
+          <span className="block text-[#CFAE52]">{t.title2}</span>
         </h1>
 
-        <p className="text-zinc-300 text-xl max-w-4xl leading-relaxed mb-16">
-          Strategic market signals, metal prices and mining intelligence for
-          Chile, Argentina and Peru. Built for investors, asset owners and
-          decision makers.
+        <p className="text-[#A6B0BB] text-xl max-w-4xl leading-relaxed mb-16">
+          {t.intro}
         </p>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-20">
-          {metals.map((metal) => (
-            <MetalCard key={metal.symbol} {...metal} />
+          {t.metals.map(([symbol, name, price, change, trend, region]) => (
+            <div
+              key={symbol}
+              className="bg-[#17212B] border border-[#27313B] hover:border-[#CFAE52] rounded-[32px] p-8 transition-all"
+            >
+              <div className="flex justify-between items-start mb-8">
+                <div>
+                  <div className="text-5xl font-black text-[#CFAE52]">{symbol}</div>
+                  <div className="text-[#A6B0BB] mt-2">{name}</div>
+                </div>
+
+                <Activity className="text-[#CFAE52]" size={34} />
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <div className="text-[#A6B0BB] text-sm">Precio referencial</div>
+                  <div className="text-2xl font-bold">{price}</div>
+                </div>
+
+                <div>
+                  <div className="text-[#A6B0BB] text-sm">Variación</div>
+                  <div className="text-lg text-[#CFAE52]">{change}</div>
+                </div>
+
+                <div>
+                  <div className="text-[#A6B0BB] text-sm">Tendencia</div>
+                  <div className="text-lg">{trend}</div>
+                </div>
+
+                <div>
+                  <div className="text-[#A6B0BB] text-sm">Relevancia estratégica</div>
+                  <div className="text-lg">{region}</div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          <div className="bg-[#151515] border border-zinc-800 rounded-[32px] p-8">
-            <Globe2 className="text-[#D4A017] mb-6" size={40} />
-            <h2 className="text-2xl font-bold mb-4">Chile</h2>
-            <p className="text-zinc-400 leading-relaxed">
-              Copper, lithium, concessions, mining regulation and strategic
-              asset protection.
-            </p>
-          </div>
+          {t.regions.map(([country, desc], index) => {
+            const icons = [Globe2, TrendingUp, ShieldCheck]
+            const Icon = icons[index]
 
-          <div className="bg-[#151515] border border-zinc-800 rounded-[32px] p-8">
-            <TrendingUp className="text-[#D4A017] mb-6" size={40} />
-            <h2 className="text-2xl font-bold mb-4">Argentina</h2>
-            <p className="text-zinc-400 leading-relaxed">
-              Copper expansion in San Juan and lithium growth across Salta,
-              Catamarca and Jujuy.
-            </p>
-          </div>
-
-          <div className="bg-[#151515] border border-zinc-800 rounded-[32px] p-8">
-            <ShieldCheck className="text-[#D4A017] mb-6" size={40} />
-            <h2 className="text-2xl font-bold mb-4">Peru</h2>
-            <p className="text-zinc-400 leading-relaxed">
-              Copper, silver, gold and strategic mining opportunities in one of
-              the worldÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s key mining jurisdictions.
-            </p>
-          </div>
+            return (
+              <div key={country} className="bg-[#17212B] border border-[#27313B] rounded-[32px] p-8">
+                <Icon className="text-[#CFAE52] mb-6" size={40} />
+                <h2 className="text-2xl font-bold mb-4">{country}</h2>
+                <p className="text-[#A6B0BB] leading-relaxed">{desc}</p>
+              </div>
+            )
+          })}
         </div>
 
-        <div className="bg-[#0A0A0A] border border-zinc-800 rounded-[40px] p-10">
+        <div className="bg-[#111A24] border border-[#27313B] rounded-[40px] p-10">
           <div className="flex items-center gap-4 mb-6">
-            <AlertTriangle className="text-[#D4A017]" size={36} />
-            <h2 className="text-3xl font-black">AMA Daily Mining Intelligence</h2>
+            <AlertTriangle className="text-[#CFAE52]" size={36} />
+            <h2 className="text-3xl font-black">{t.commentTitle}</h2>
           </div>
 
-          <p className="text-zinc-300 text-lg leading-relaxed mb-6">
-            Copper remains the core strategic metal for Chile and Peru, while
-            Argentina is increasingly positioned as a long-term growth platform
-            through copper expansion in San Juan and lithium development in the
-            NOA region.
-          </p>
-
-          <p className="text-zinc-400 text-lg leading-relaxed">
-            AMA tracks market prices not only as financial indicators, but as
-            signals of concession value, deal flow, project timing, investor
-            appetite and territorial opportunity.
-          </p>
+          <p className="text-zinc-300 text-lg leading-relaxed mb-6">{t.comment1}</p>
+          <p className="text-[#A6B0BB] text-lg leading-relaxed">{t.comment2}</p>
         </div>
       </section>
     </main>
